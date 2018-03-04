@@ -5,7 +5,7 @@ except ImportError:
 
 
 class Server:
-    handler_404 = lambda *_, **__: Response(body='Not found', status_code=400)
+    handler_404 = lambda *_, **__: Response(body='Not found', status_code=404)
 
     def __init__(self, *, loop=None):
         self.loop = loop or asyncio.get_event_loop()
