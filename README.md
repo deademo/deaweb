@@ -120,3 +120,10 @@ Respose status code. By default 200.
 
 ##### **`content_type`** _(str or None)_
 Respose Content-Type header value. 'text/html' if not set.
+
+# Known issues
+### When you trying to install deaweb using upip on esp8266 you may got:
+```
+MemoryError: memory allocation failed, allocating 72 bytes
+```
+In this case just [use deaweb.mpy file](#using-frozen-micropython-code-mpy-file-or-python-source-code-py-file)
