@@ -89,7 +89,7 @@ def main_handler(request):
 You can do not use this class to return response
 
 Just return string what you want from handler to make response
-##### Response(body=None, status_code=200, content_type='text/html')
+##### **`Response(body=None, status_code=200, content_type='text/html')`**
  **`body`** _(str)_ - Response string. By default None.
  
  **`status_code`** _(int)_ - Response status code. By default 200.
