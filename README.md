@@ -39,16 +39,16 @@ Example:
         # print's Content-Type of request or None if not provided
         print(request.headers.get('Content-Type'))
  ```       
-`Request.method` (str or None)
+ > `Request.method` (str or None)
 Contains string with request method (like a GET/POST/PUT... etc). None if headers not read.
 
-`Request.path` (str or None)
+ > `Request.path` (str or None)
 Contains string with request path (like a /get, /hi or /). None if headers not read.
 
-`Request.protocol` (str or None)
+ > `Request.protocol` (str or None)
 Contains string of request protocol. None if headers not read.
 
-`Request.params` (dict)
+ > `Request.params` (dict)
 Contains query string params as dict. Empty if headers not read.
 Example:
 ```
@@ -58,7 +58,7 @@ Example:
         print(request.params.get('param1')) # None
         print(request.params.get('key')) # userdata
 ```
-`Request.reader` (uasyncio.StreamReader)
+ > `Request.reader` (uasyncio.StreamReader)
 If request body provided you can use reader method `read` to read data of request
 Example:
 ```
@@ -68,7 +68,7 @@ Example:
         content = await request.reader.read()
         f.write(content)
 ```
-`Request.writer` (uasyncio.StreamWriter)
+ > `Request.writer` (uasyncio.StreamWriter)
 If you need to send response before handler finished you can use writer method `write` and `aclose` to write and close response
 Example:
 ```
