@@ -1,8 +1,8 @@
 # deaweb
-lightweight asynchroumous easy-to-use web-framework for micropython
+lightweight asynchronous easy-to-use web-framework for micropython
 
 # How to use
-It's really simple, just fast example:
+It's really simple, just a fast example:
 ```
 import deaweb
 app = deaweb.Server()
@@ -13,7 +13,7 @@ def hello_world_handler(request):
 ```
 For more details look at API reference or examples
 
-# Instalation 
+# Installation 
 ### Using upip
 You can use upip to install deaweb. Example: 
 ```
@@ -31,7 +31,7 @@ import deaweb
 # API reference
 ### Request
 ##### **`Request.headers`** _(dict or None)_
-Contains dict of request headers. None if headers not read.
+Contains dict of a request headers. None if headers not read.
 Example:
 ```
 @app.handler('/')
@@ -40,13 +40,13 @@ def test(request):
     print(request.headers.get('Content-Type'))
 ```       
 ##### **`Request.method`** _(str or None)_
-Contains string with request method (like a GET/POST/PUT... etc). None if headers not read.
+Contains string with a request method (like a GET/POST/PUT... etc). None if headers not read.
 
 ##### **`Request.path`** _(str or None)_
-Contains string with request path (like a /get, /hi or /). None if headers not read.
+Contains string with a request path (like a /get, /hi or /). None if headers not read.
 
 ##### **`Request.protocol`** _(str or None)_
-Contains string of request protocol. None if headers not read.
+Contains string of a request protocol. None if headers not read.
 
 ##### **`Request.get(name)`** _(str, list or None)_
 Returns value of params provided in query string. Needs to be headers read.
@@ -66,9 +66,8 @@ def data_handler(request):
 Return request Content-Length header value. If header not provided returns 0.
 
 ##### **`Request.reader`** _(uasyncio.StreamReader)_
-If request body provided you can use reader method `read` to read data of request
-Example:
-```
+Return request Content-Length header value. If header not provided returns 0.
+
 @app.handler('/upload_file')
 def upload_file_handler(request):
 with open('file.tmp', 'w') as f:
@@ -76,7 +75,7 @@ with open('file.tmp', 'w') as f:
     f.write(content)
 ```
 ##### **`Request.writer`** _(uasyncio.StreamWriter)_
-If you need to send response before handler finished you can use writer method `write` and `aclose` to write and close response
+Return request Content-Length header value. If header not provided returns 0.
 Example:
 ```
 @app.handler('/')
@@ -86,9 +85,9 @@ def main_handler(request):
 ```
 
 ### Response
-You can do not use this class to return response
+You can do not use this class to return a response
 
-Just return string what you want from handler to make response
+Just return string what you want from handler to make a response
 ##### **`Response(body=None, status_code=200, content_type='text/html')`**
  **`body`** _(str)_ - Response string. By default None.
  
@@ -97,7 +96,7 @@ Just return string what you want from handler to make response
  **`content_type`** _(str)_ - Response Content-Type. By default 'text/html'.
 
 ##### **`awrite()`** _(None)_
-Use this method to write `Response.body` to client.
+Use this method to write `Response.body` to the client.
 Example:
 
 ```
