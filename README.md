@@ -1,6 +1,18 @@
 # deaweb
 lightweight asynchroumous easy-to-use web-framework for micropython
 
+# How to use
+It's really simple, just fast example:
+```
+import deaweb
+app = deaweb.Server()
+
+@app.handler('/hi')
+def hello_world_handler(request):
+    return 'Hello World!'
+```
+For more details look at API reference or examples
+
 # Instalation 
 ### Using upip
 You can use upip to install deaweb. Example: 
@@ -15,17 +27,6 @@ After just import deaweb in your app:
 ```
 import deaweb
 ```
-# How to use
-It's really simple, just fast example:
-```
-import deaweb
-app = deaweb.Server()
-
-@app.handler('/hi')
-def hello_world_handler(request):
-    return 'Hello World!'
-```
-For more details look at API reference or examples
 
 # API reference
 ### Request
