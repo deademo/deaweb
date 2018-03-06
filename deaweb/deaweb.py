@@ -110,11 +110,12 @@ class Response:
         "\r\n")
 
 
-    def __init__(self, body=None, status_code=200, content_type='text/html', *, request=None):
+    def __init__(self, body=None, status_code=200, content_type='text/html', headers={}, *, request=None):
         self.body = body
         self.status_code = status_code
         self.request = request
         self.content_type = content_type
+        self.headers = headers
 
 
     async def awrite(self):
