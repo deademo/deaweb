@@ -73,7 +73,7 @@ def data_handler(request):
 Return request Content-Length header value. If header not provided returns 0.
 
 ##### **`Request.reader`** _(uasyncio.StreamReader)_
-Return request reader. If header not provided returns 0.
+Returns request reader
 
 ```
 @app.handler('/upload_file')
@@ -84,7 +84,7 @@ with open('file.tmp', 'w') as f:
 ```
 
 ##### **`Request.writer`** _(uasyncio.StreamWriter)_
-Return request writer. If header not provided returns 0.
+Returns request writer
 Example:
 ```
 @app.handler('/')
