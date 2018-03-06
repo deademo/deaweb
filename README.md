@@ -98,13 +98,13 @@ You can do not use this class to return a response
 
 Just return string what you want from handler to make a response
 ##### **`Response(body=None, status_code=200, content_type='text/html')`**
- **`body`** _(str)_ - Response string. By default None.
+ *`body`* _(str)_ - Response string. By default None.
  
- **`status_code`** _(int)_ - Response status code. By default 200.
+ *`status_code`* _(int)_ - Response status code. By default 200.
  
- **`content_type`** _(str)_ - Response Content-Type. By default 'text/html'.
+ *`content_type`* _(str)_ - Response Content-Type. By default 'text/html'.
 
-##### **`awrite()`** _(None)_
+##### **`Response.awrite()`** _(None)_
 Use this method to write `Response.body` to the client.
 Example:
 
@@ -116,14 +116,14 @@ or
 yield from response.awrite()
 ```
 
-##### **`aclose()`** _(None)_
+##### **`Response.aclose()`** _(None)_
 Use this method to close response/communication with client.
 
-##### **`body`** _(str or None)_
+##### **`Response.body`** _(str or None)_
 Respose body. None if not set.
 
-##### **`status_code`** _(int)_
+##### **`Response.status_code`** _(int)_
 Respose status code. By default 200.
 
-##### **`content_type`** _(str or None)_
+##### **`Response.content_type`** _(str or None)_
 Respose Content-Type header value. 'text/html' if not set.
