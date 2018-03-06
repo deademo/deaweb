@@ -22,7 +22,7 @@ upip.install('deaweb')
 import deaweb
 ```
 ### Using frozen micropython code (.mpy file) or python source code (.py file)
-Just download `deaweb.mpy` or `deaweb.py` file and put it near your app to use .mpy file as python module.
+Just download `deaweb.mpy` or `deaweb.py` file and put it near your app to use .py/.mpy file as python module.
 After just import deaweb in your app:
 ```
 import deaweb
