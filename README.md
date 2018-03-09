@@ -83,17 +83,10 @@ def put_data_handler(request):
 ```
 
 ##### **`Request.readinto_safe(file_path)`** _(bool)_
-Same with Request.readinto, but
+Same with [Request.readinto](#requestreadintofile_path-none), but
 If you got MemoryError then just False will returned. If not True.
 And file first will be written into buffer file and if download successful
 renamed to yours file name
-Example:
-```
-@app.handler('/put_data')
-def put_data_handler(request):
-    await request.readinto('some_file.ext')
-    return 'ok'
-```
 
 ##### **`Request.reader`** _(uasyncio.StreamReader)_
 Returns request reader
@@ -152,7 +145,12 @@ Respose status code. By default 200.
 Respose Content-Type header value. 'text/html' if not set.
 
 ### FileResponse
-Uses to return file as response
+Used to return file as response
+
+TODO:
+ - file name in header
+ - file content type in depend on file extension
+ - read N bytes instead readline
 Example:
 ```
 @app.handler('/get_some_file')
