@@ -158,8 +158,7 @@ class Response:
         "Server: micropython\r\n"
         "Content-Type: {content_type}\r\n"
         "Content-Length: {content_length}\r\n"
-        "Connection: closed\r\n"
-        "\r\n")
+        "Connection: closed\r\n")
 
     def __init__(self, body=None, status_code=200, content_type='text/html',
                  headers={}, *, request=None):
@@ -175,7 +174,17 @@ class Response:
             'status_code': self.status_code,
             'content_type': self.content_type,
         }
-        await self.request._write(self.__response_template.format(**headers_values))
+        for key, value in self.headers.items():
+            key = key.lower().replace('-', '_')
+            if key in headers_values:
+                headers_values[key] = value
+
+        response = self.__response_template.format(**headers_values)
+        for header, value in self.headers.items():
+            response += '{}: {}\r\n'.format(header, value)
+        response += "\r\n"
+
+        await self.request._write(response)
 
     async def awrite(self):
         await self.awrite_headers()
