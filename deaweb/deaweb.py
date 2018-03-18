@@ -186,12 +186,14 @@ class Response:
 
         await self.request._write(response)
 
-    async def awrite(self):
-        await self.awrite_headers()
-        if self.body:
-            await self.request._write(self.body+"\r\n")
+    async def awrite(self, body=None):
+        if not body:
+            await self.request._write(body)
+        elif not self.body:
+            await self.request._write(self.body)
 
     async def aclose(self):
+        await self.request._write("\r\n")
         if hasattr(self.request.writer, 'aclose'):
             await self.request.writer.aclose()
 
