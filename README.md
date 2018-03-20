@@ -146,6 +146,10 @@ Respose status code. By default 200.
 ##### **`Response.content_type`** _(str or None)_
 Respose Content-Type header value. 'text/html' if not set.
 
+##### **`Response.content_length`** _(int)_
+Respose Content-Length header value (body attribute length). 0 if no body provided.
+
+
 ### FileResponse
 Used to return file as response
 

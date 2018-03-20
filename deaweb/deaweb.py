@@ -199,7 +199,7 @@ class Response:
 
     @property
     def content_length(self):
-        return len(self.body) if self.body else '0'
+        return len(self.body) if self.body else 0
 
 
 class FileResponse(Response):
