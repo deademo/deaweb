@@ -174,13 +174,15 @@ class Response:
             'status_code': self.status_code,
             'content_type': self.content_type,
         }
-        for key, value in self.headers.items():
-            key = key.lower().replace('-', '_')
-            if key in headers_values:
-                headers_values[key] = value
+
+        _headers = self.headers
+        for key, value in list(_headers.keys()):
+            if key.lower().replace('-', '_') in headers_values:
+                headers_values[key] = _headers[key]
+                del _headers[key]
 
         response = self.__response_template.format(**headers_values)
-        for header, value in self.headers.items():
+        for header, value in _headers.items():
             response += '{}: {}\r\n'.format(header, value)
         response += "\r\n"
 
