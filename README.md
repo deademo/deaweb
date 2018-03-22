@@ -28,7 +28,7 @@ After just import deaweb in your app:
 import deaweb
 ```
 
-Also you can complile deaweb.mpy file using deaweb.py using [MicroPython cross compiler](https://github.com/micropython/micropython/tree/master/mpy-cross)
+Also you can complile deaweb.mpy file from deaweb.py using [MicroPython cross compiler](https://github.com/micropython/micropython/tree/master/mpy-cross)
 
 # Known issues
 ### When you trying to install deaweb using upip on esp8266 you may got:
